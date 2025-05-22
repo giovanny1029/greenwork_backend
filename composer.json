@@ -1,0 +1,59 @@
+{
+    "name": "slim/slim-skeleton",
+    "description": "A Slim Framework skeleton application for rapid development",
+    "keywords": ["microframework", "rest", "router", "psr7"],
+    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Lockhart",
+            "email": "info@joshlockhart.com",
+            "homepage": "http://www.joshlockhart.com/"
+        }
+    ],    "require": {
+        "php": ">=5.5.0",
+        "slim/slim": "3.12.*",
+        "slim/php-view": "^2.0",
+        "monolog/monolog": "^1.17",
+        "illuminate/database": "~5.1",
+        "firebase/php-jwt": "^6.11",
+        "tuupola/cors-middleware": "^1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=4.8 < 6.0",
+        "friendsofphp/php-cs-fixer": "^3.9",
+        "squizlabs/php_codesniffer": "^3.13",
+        "captainhook/captainhook": "^5.25"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "process-timeout" : 0,
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    },    "scripts": {
+        "start": "php -S localhost:8080 -t public index.php",
+        "test": "phpunit",
+        "test:setup": "mysql -u root -p < tests/setup_test_database.sql",
+        "test:with-setup": [
+            "@test:setup",
+            "@test"
+        ],
+        "lint": "phpcs",
+        "lint:fix": "phpcbf",
+        "cs:fix": "php-cs-fixer fix",
+        "check-style": [
+            "@lint",
+            "php-cs-fixer fix --dry-run --diff"
+        ],
+        "fix-style": [
+            "@lint:fix",
+            "@cs:fix"
+        ]
+    }
+
+}

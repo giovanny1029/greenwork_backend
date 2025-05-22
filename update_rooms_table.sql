@@ -1,0 +1,1 @@
+ALTER TABLE `rooms` ADD COLUMN `price` DECIMAL(10,2) NULL DEFAULT NULL AFTER `description`;
