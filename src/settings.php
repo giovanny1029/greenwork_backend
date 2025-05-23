@@ -1,8 +1,8 @@
 <?php
 return [
     'settings' => [
-        'displayErrorDetails' => true, // set to false in production
-        'addContentLengthHeader' => false, // Allow the web server to send the content-length header
+        'displayErrorDetails' => true,
+        'addContentLengthHeader' => false,
 
         // Renderer settings
         'renderer' => [
@@ -16,7 +16,6 @@ return [
             'level' => \Monolog\Logger::DEBUG,
         ],
 
-        // Database connection settings        
         'db' => [
             'driver' => 'mysql',
             'host' => $_ENV['DB_HOST'] ?? 'database',
